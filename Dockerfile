@@ -6,6 +6,5 @@ RUN apt-get update && \
     export DEBIAN_FRONTEND=noninteractive && \
     apt-get -y install libsasl2-modules postfix && \
     cd /src && \
-    php manage.php deploy -v /var/www/htdocs/osticket/ && \
+    php manage.php deploy -v /var/www/html/osticket/ && \
     rm -rf /src
-    
