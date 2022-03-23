@@ -1,4 +1,4 @@
-FROM php:apache-bullseye
+FROM php:7.4-apache-bullseye
 RUN mkdir /src
 COPY . /src/
 RUN apt-get update && \
@@ -8,5 +8,4 @@ RUN apt-get update && \
     cd /src && \
     php manage.php deploy -v /var/www/htdocs/osticket/ && \
     rm -rf /src
-
-
+    
