@@ -1,6 +1,6 @@
 FROM php:apache-bullseye
 RUN mkdir /src
-COPY * /src/
+COPY . /src/
 RUN apt-get update && \
     apt-get upgrade -y && \
     export DEBIAN_FRONTEND=noninteractive && \
