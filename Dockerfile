@@ -9,4 +9,9 @@ RUN apt-get update && \
     php manage.php deploy -sv /var/www/html/ && \
     chown -R www-data:www-data /var/www/html && \
     docker-php-ext-install gd mysqli intl opcache && \
+    pecl install apcu-5.1.21 && \
+    docker-php-ext-enable apcu && \
+    echo "extension=apcu.so" >> /usr/local/etc/php/php.ini && \
+    echo "apc.enable_cli=1" >> /usr/local/etc/php/php.ini && \
+    echo "apc.enable=1" >> /usr/local/etc/php/php.ini && \
     rm -rf /src
