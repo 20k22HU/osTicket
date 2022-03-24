@@ -4,7 +4,7 @@ COPY . /src/
 RUN apt-get update && \
     apt-get upgrade -y && \
     export DEBIAN_FRONTEND=noninteractive && \
-    apt-get -y install libsasl2-modules postfix && \
+    apt-get -y install libsasl2-modules postfix zlib1g && \
     cd /src && \
     php manage.php deploy -sv /var/www/html/ && \
     chown -R www-data:www-data /var/www/html && \
