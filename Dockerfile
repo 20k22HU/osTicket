@@ -8,4 +8,5 @@ RUN apt-get update && \
     cd /src && \
     php manage.php deploy -sv /var/www/html/ && \
     chown -R www-data:www-data /var/www/html && \
+    docker-php-ext-install gd mysqli intl opcache apcu && \
     rm -rf /src
